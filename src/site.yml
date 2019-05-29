@@ -5,12 +5,12 @@ domain: caomeidd.com
 sites:
   - domain: shop
     repo: git@git.pengjisoft.com:gpzhao/docshop.git
-    type: vue #vue project template
+    type: vue
 
   - domain: shoppc
     repo: git@git.pengjisoft.com:out-source/cat-food-api.git
-    type: laravel #lravel project template
+    type: laravel
 
   - domain: controll
     repo: git@git.pengjisoft.com:out-source/cat-food-api.git
-    type: laravel #lravel project template
+    type: laravel

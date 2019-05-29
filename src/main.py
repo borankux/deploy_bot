@@ -6,7 +6,7 @@ import json
 import os
 import requests as http
 import math
-
+from subprocess import run
 
 from dotenv import find_dotenv, load_dotenv
 
@@ -27,7 +27,7 @@ def pull_code(repo, path, branch='master'):
     print('Done !')
 
     print('Installing packages...')
-    mf = os.system('cd' + ' ' + path + 'make install')
+    mf = os.system('cd' + ' ' + path + ' && make install')
     if mf !=0:
         return mf
     print('Done !')
@@ -69,4 +69,4 @@ for site in sites:
 
 end = time.time()
 duration = math.ceil(end - start)
-print(end - start)
+print('duration:' + duration + 's.')
