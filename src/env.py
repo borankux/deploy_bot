@@ -1,0 +1,8 @@
+import dotenv
+import os
+from dotenv import find_dotenv, load_dotenv
+load_dotenv(find_dotenv())
+
+
+def get(key):
+    return os.getenv(key)
