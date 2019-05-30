@@ -18,7 +18,7 @@ DINGDING = 'https://oapi.dingtalk.com/robot/send'
 
 
 with open('./site.yml') as f:
-    x = yaml.load(f)
+    x = yaml.safe_load(f)
 
 
 def pull_code(repo, path, branch='master'):
