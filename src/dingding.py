@@ -5,18 +5,29 @@ import os
 DINGDING = 'https://oapi.dingtalk.com/robot/send'
 
 
-def ding_text(msg):
+def send_request(data):
     token = os.getenv('DING_TOKEN')
     url = DINGDING + '?access_token=' + token
-    headers = {}
-    headers['Content-Type'] = 'application/json'
+    headers = {'Content-Type': 'application/json'}
+    data = json.dumps(data)
+    res = http.post(url=url, headers=headers, data=data)
+    return res
 
-    data = json.dumps({
-        "msgtype": "text",
-        "text": {
-            "content": msg
+
+def ding_text(msg):
+    return send_request({
+        'msgtype': 'txt',
+        'content': {
+            'text': msg
         }
     })
-    res = http.post(url=url, headers=headers, data=data)
-    print(res.content)
-    return res
+
+
+def ding_md(title, text):
+    return send_request({
+        'msgtype': 'markdown',
+        'markdown': {
+            'title': title,
+            'text':text
+        }
+    })

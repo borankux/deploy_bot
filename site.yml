@@ -2,6 +2,7 @@ version: 0.1
 base: /Users/macos/Desktop/pengjisoft/deploy_test
 name: 测试应用部署
 domain: caomeidd.com
+host: 120.27.238.164
 sites:
   - domain: shop
     repo: git@git.pengjisoft.com:gpzhao/docshop.git

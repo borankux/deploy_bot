@@ -7,6 +7,7 @@ import math
 import env
 import dingding
 import deploy
+import aliyun
 
 
 
@@ -18,19 +19,16 @@ name = x['name']
 base = x['base']
 domain = x['domain']
 sites = x['sites']
+dbi = env.get('ALI_DB_INSTANCE')
 
-dingding.ding_text('starting deploy ...')
-
+aliyun.setup_db()
 
 for site in sites:
     path = base + '/' + site['domain']
     repo = site['repo']
     full_url = site['domain'] + '.' + domain
+    deploy.pull_code(repo, path)
 
-    if deploy.pull_code(repo, path):
-        print(name + ":"+ full_url + 'deploy complete !')
-        pass
-    dingding.ding_text(full_url+' is done !')
 
 end = time.time()
 duration = math.ceil(end - start)
