@@ -46,7 +46,6 @@ def grant_db(dbi, account, db_name, privilege='ReadWrite'):
     return response
 
 
-
 def add_domain_record(domain, value, rr, type='A'):
     request = AddDomainRecordRequest()
     request.set_accept_format('json')
@@ -58,5 +57,11 @@ def add_domain_record(domain, value, rr, type='A'):
     return response
 
 
-def setup_db():
+def setup_db(dbi, account, password, description):
+    create_account(dbi, account, password, description)
+    create_db(dbi, account, description)
+    grant_db(dbi, account, account)
+    return True
     pass
+
+
