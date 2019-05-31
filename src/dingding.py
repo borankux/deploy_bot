@@ -1,12 +1,13 @@
 import requests as http
 import json
 import os
+import env
 
 DINGDING = 'https://oapi.dingtalk.com/robot/send'
 
 
 def send_request(data):
-    token = os.getenv('DING_TOKEN')
+    token = env.get('DING_TOKEN')
     url = DINGDING + '?access_token=' + token
     headers = {'Content-Type': 'application/json'}
     data = json.dumps(data)
@@ -28,6 +29,8 @@ def ding_md(title, text):
         'msgtype': 'markdown',
         'markdown': {
             'title': title,
-            'text':text
+            'text': text
         }
     })
+
+

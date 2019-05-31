@@ -1,8 +1,9 @@
 version: 0.1
 base: /Users/macos/Desktop/pengjisoft/deploy_test
-title: mirzat测试应用部署项目
-name: mirzat_test
-domain: caomeidd.com
+title: easy_deploy:测试应用部署项目
+name: easy_deploy9
+password: da0s9dj0asj9d0a9jsd
+domain: pengjisoft.com
 host: 120.27.238.164
 sites:
   - name: shop
