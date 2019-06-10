@@ -23,3 +23,27 @@ Clone the project, cd in to the folder, then run:
 ```
 ### todo
 - Alot
+
+
+### Schema format
+```yml
+version: 0.1
+base: /var/www/public_html/
+title: easy_deploy_test_project
+name: easy_deploy
+password: '#$gWgsgwng90q93@#FWEgqt13G@Q'
+domain: example.com
+host: 127.0.0.1
+sites:
+  - name: front
+    repo: git@github.com:borankux/front_end.git
+    type: vue
+
+  - name: backend
+    repo: git@github.com:borankux/back_end.git
+    type: laravel
+
+  - name: official
+    repo: git@github.com:borankux/official.git
+    type: golang
+ ```
