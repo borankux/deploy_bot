@@ -3,4 +3,4 @@ requests==2.21.0
 aliyun_python_sdk_core==2.13.4
 aliyun_python_sdk_rds==2.3.7
 python-dotenv==0.10.2
-PyYAML==5.1
+PyYAML==5.4
